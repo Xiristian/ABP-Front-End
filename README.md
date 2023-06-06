@@ -7,3 +7,8 @@ Na plataforma, o usuário poderá realizar seu cadastro e a partir de um menu se
 O desenvolvimento será feito em html, css e javascript, juntamente com a biblioteca React.
 
 Desenvolvedores: Ana Carolina Machado, Artur Borges, Christian Giuliani, Julia De Luca e Luz Brenda  Oliveira.
+
+
+
+LINK DO PROTÓTIPO DE TELAS NO FIGMA:
+https://www.figma.com/file/rN0dwuGNB8HnyAT6trEHup/Untitled?type=design&node-id=0%3A1&t=yoQMCmrCJhBRTQLY-1
