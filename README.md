@@ -72,5 +72,5 @@ Link do Figma
 ## Projeto em Construção
 
 <p align="center">
-<img src="looneyTunes.gif">
+<img src="worktodo.gif">
 </p>
