@@ -67,7 +67,6 @@ Link do Figma
 </a>
 </p>
 <img src="Figma1.png">
-<br>
 
 ## Projeto em Construção
 
