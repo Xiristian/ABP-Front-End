@@ -60,7 +60,8 @@ Abaixo, a equipe envolvida neste projeto.
 <p> Para os demais fins, disponibilizamos o layout criado no figma que irá guiar a produção das telas durante o projeto</p>
 <ul>
 <li>
-https://www.figma.com/file/rN0dwuGNB8HnyAT6trEHup/Untitled?type=design&node-id=0%3A1&t=yoQMCmrCJhBRTQLY-1
+<a href="https://www.figma.com/file/rN0dwuGNB8HnyAT6trEHup/Untitled?type=design&node-id=0%3A1&t=yoQMCmrCJhBRTQLY-1">Figma</a>
+![Nome da Imagem](Figma1.png)
 <li>
 
 <!-- Instalação -->
