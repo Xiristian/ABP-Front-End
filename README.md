@@ -15,8 +15,20 @@ Sendo assim, buscamos automatizar o meio existente implementando um portal onde 
 </p>
 
 <p align="left">
-Na plataforma, o usuário poderá realizar seu cadastro e a partir de um menu selecionar a ação que deseja. Nas opções, serão incluídos direcionamentos para as telas de agendamento, histórico de consultas, informações e atendimento on-line. Em contrapartida, existirão telas onde a permissão ficará reduzida aos funcionários das unidades para realizar a administração dos dados, assim, contando com telas de alteração de cadastro, disponibilização de horários para agendamento, confirmação de agendamento, inclusão de histórico por paciente e atendimento on-line (acesso do profissional).
+Na plataforma, o usuário poderá realizar seu cadastro e a partir de um menu selecionar a ação que deseja. Nas opções, serão incluídos direcionamentos para as telas de agendamento, histórico de consultas, informações e atendimento on-line. Em contrapartida, existirão telas onde a permissão ficará reduzida aos funcionários das unidades para realizar a administração dos dados.
 </p>
+
+## Operações disponíveis
+
+<ul>
+<li>Administração</li>
+<li>Cadastro e edição de usuários</li>
+<li>Agendamento das consultas</li>
+<li>Consulta de horários para o agendamento</li>
+<li>Confirmação de horários para o agendamento</li>
+<li>Inclusão de histórico por paciente</li>
+<li>Atendimento on-line com profissional</li>
+</ul>
 
 ## Linguagens e Ferramentas Utilizadas
 
@@ -35,11 +47,11 @@ Aqui estão as linguagens de programação e ferramentas utilizadas no projeto:
 Abaixo, a equipe envolvida neste projeto.
 
 <ul>
-<li><a href="">Ana Carolina Machado</a></li>
-<li><a href="">Artur Borges</a></li>
-<li><a href="">Christian Giuliani</a></li>
-<li><a href="">Julia De Luca</a></li>
-<li><a href="">Luz Brenda  Oliveira</a></li>
+<li><a href="https://github.com/anacarolina1002">Ana Carolina Machado</a></li>
+<li><a href="https://github.com/ArturBarbos4">Artur Borges</a></li>
+<li><a href="https://github.com/Xiristian">Christian Giuliani</a></li>
+<li><a href="https://github.com/judwluca">Julia De Luca</a></li>
+<li><a href="https://github.com/luzbrendaoliv">Luz Brenda  Oliveira</a></li>
 </ul>
 
 
