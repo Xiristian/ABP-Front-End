@@ -69,5 +69,5 @@ Link do Figma
 <img src="Figma1.png">
 <br>
 <p align="center">
-<img src="https://media.giphy.com/media/mR3dXKpI6P8CA/giphy.gif">
+<img src="looneyTunes.gif">
 </p>
