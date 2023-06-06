@@ -72,7 +72,7 @@ Link do Figma
 <!-- Instalação -->
 ## Instalação
 
-1. Clique no botão "<> Code" e copie o Link disponível.
+1. Clique no botão <img src="codeButton.png" style="width:80px; height:30px, marginTop:10px"> e copie o Link disponível.
 
 2. Utilizando o Link copiado, acesse o Visual Studio e no terminal clone o repositório:
 
