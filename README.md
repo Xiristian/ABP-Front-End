@@ -60,8 +60,11 @@ Abaixo, a equipe envolvida neste projeto.
 <p> Para os demais fins, disponibilizamos o layout criado no figma que irá guiar a produção das telas durante o projeto</p>
 <ul>
 <li>
-<a href="https://www.figma.com/file/rN0dwuGNB8HnyAT6trEHup/Untitled?type=design&node-id=0%3A1&t=yoQMCmrCJhBRTQLY-1">Figma</a>
-![Nome da Imagem](Figma1.png)
+<a href="https://www.figma.com/file/rN0dwuGNB8HnyAT6trEHup/Untitled?type=design&node-id=0%3A1&t=yoQMCmrCJhBRTQLY-1">
+Figma
+</a>
+<br>
+![Figma1](https://github.com/Xiristian/ABP-Front-End/assets/69262009/b139b5ab-1863-4ac3-9a3b-2f393c904601)
 <li>
 
 <!-- Instalação -->
