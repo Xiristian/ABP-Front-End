@@ -63,13 +63,6 @@ Abaixo, a equipe envolvida neste projeto.
 https://www.figma.com/file/rN0dwuGNB8HnyAT6trEHup/Untitled?type=design&node-id=0%3A1&t=yoQMCmrCJhBRTQLY-1
 <li>
 
-<!-- Badges (opcional) -->
-<p align="center">
-  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/seu-usuario/seu-repositorio">
-  <img alt="GitHub stars" src="https://img.shields.io/github/stars/seu-usuario/seu-repositorio">
-  <img alt="GitHub forks" src="https://img.shields.io/github/forks/seu-usuario/seu-repositorio">
-</p>
-
 <!-- Instalação -->
 ## Instalação
 
