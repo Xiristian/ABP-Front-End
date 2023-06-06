@@ -66,5 +66,6 @@ Para os demais fins, disponibilizamos o layout criado no figma que irá guiar a 
 Link do Figma
 </a>
 </p>
-
 <img src="Figma1.png">
+<br>
+<img src="https://media.giphy.com/media/mR3dXKpI6P8CA/giphy.gif">
