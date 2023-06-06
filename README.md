@@ -10,5 +10,6 @@ Desenvolvedores: Ana Carolina Machado, Artur Borges, Christian Giuliani, Julia D
 
 
 
-LINK DO PROTÓTIPO DE TELAS NO FIGMA:
+
+- LINK DO PROTÓTIPO DE TELAS NO FIGMA:
 https://www.figma.com/file/rN0dwuGNB8HnyAT6trEHup/Untitled?type=design&node-id=0%3A1&t=yoQMCmrCJhBRTQLY-1
