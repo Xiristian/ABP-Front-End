@@ -61,7 +61,7 @@ Abaixo, a equipe envolvida neste projeto.
 Para os demais fins, disponibilizamos o layout criado no figma que irá guiar a produção das telas durante o projeto.
 </p>
 
-<p style="marginBottom: 10px">
+<p style="margin-bottom: 10px">
 <a href="https://www.figma.com/file/rN0dwuGNB8HnyAT6trEHup/Untitled?type=design&node-id=0%3A1&t=yoQMCmrCJhBRTQLY-1">
 Link do Figma
 </a>
@@ -72,7 +72,8 @@ Link do Figma
 <!-- Instalação -->
 ## Instalação
 
-1. Clique no botão <img src="codeButton.png" style="width:80px; height:40px, marginTop:50px"> e copie o Link disponível.
+1. Clique no botão <img src="codeButton.png" alt="Texto alternativo" style="width: 80px; height: 40px; margin-top: 50px;">
+ e copie o Link disponível.
 
 2. Utilizando o Link copiado, acesse o Visual Studio e no terminal clone o repositório:
 
