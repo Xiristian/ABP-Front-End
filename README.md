@@ -64,7 +64,7 @@ Abaixo, a equipe envolvida neste projeto.
 Figma
 </a>
 <br>
-![Figma](Figma1.png)
+<img src="imagem.png">
 <li>
 
 <!-- Instalação -->
