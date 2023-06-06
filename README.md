@@ -68,4 +68,5 @@ Link do Figma
 </p>
 <img src="Figma1.png">
 <br>
-<img src="https://media.giphy.com/media/mR3dXKpI6P8CA/giphy.gif">
+
+<img src="https://media.giphy.com/media/mR3dXKpI6P8CA/giphy.gif" style="align:center;">
