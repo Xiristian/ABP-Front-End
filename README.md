@@ -64,7 +64,7 @@ Abaixo, a equipe envolvida neste projeto.
 Figma
 </a>
 <br>
-![Figma1](https://github.com/Xiristian/ABP-Front-End/assets/69262009/b139b5ab-1863-4ac3-9a3b-2f393c904601)
+![Figma1](https://github.com/Xiristian/ABP-Front-End/assets/69262009/4c9d44f7-9cdd-4525-a4d4-8ec598db1568)
 <li>
 
 <!-- Instalação -->
