@@ -58,10 +58,10 @@ Abaixo, a equipe envolvida neste projeto.
 ## Figma
 
 <p>
-Para os demais fins, disponibilizamos o layout criado no figma que irá guiar a produção das telas durante o projeto
+Para os demais fins, disponibilizamos o layout criado no figma que irá guiar a produção das telas durante o projeto.
 </p>
 
-<p style={marginBottom: 10px}>
+<p style="marginBottom: 10px">
 <a href="https://www.figma.com/file/rN0dwuGNB8HnyAT6trEHup/Untitled?type=design&node-id=0%3A1&t=yoQMCmrCJhBRTQLY-1">
 Link do Figma
 </a>
@@ -72,7 +72,11 @@ Link do Figma
 <!-- Instalação -->
 ## Instalação
 
-1. Clone o repositório:
+1. Clique no botão <img src="botaoCode.png" style="width:100px; height:20px"> e copie o Link disponível.
+
+
+
+2. Utilizando o Link copiado, acesse o Visual Studio e no terminal clone o repositório:
 
    ```sh
    git clone https://github.com/seu-usuario/seu-repositorio.git
