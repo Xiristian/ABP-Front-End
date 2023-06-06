@@ -72,7 +72,7 @@ Link do Figma
 <!-- Instalação -->
 ## Instalação
 
-1. Clique no botão <img src="botaoCode.png" style="width:100px; height:20px"> e copie o Link disponível.
+1. Clique no botão <img src="botaoCode.png" style="width:80px; height:40px"> e copie o Link disponível.
 
 
 
