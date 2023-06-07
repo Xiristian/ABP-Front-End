@@ -1,7 +1,7 @@
 # ABP-Front-End - Agende Aqui
 
 <!-- Título do Projeto -->
-<p style="font-size:10px">Projeto de ABP da matéria de Front End do curso de Engenharia de Software da UniSatc.</p>
+<p style="fontSize:10px">Projeto de ABP da matéria de Front End do curso de Engenharia de Software da UniSatc.</p>
 
 ## Sobre
 
