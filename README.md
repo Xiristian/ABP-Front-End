@@ -3,7 +3,7 @@
 <!-- Título do Projeto -->
 <h1>Projeto de ABP da matéria de Front End do curso de Engenharia de Software da UniSatc.</h1>
 
-<img src="logo.png">
+<img src="logo.png" style="width:50px,height:50px;">
 
 ## Sobre
 
