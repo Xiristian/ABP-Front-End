@@ -38,8 +38,11 @@ Aqui estão as linguagens de programação e ferramentas utilizadas no projeto:
 <li>HTML</li>
 <li>CSS</li>
 <li>JavaScript</li>
-<li>React.js</li>
+<li>React</li>
+<li>Next.js</li>
+<li>Tailwind CSS</li>
 <li>Git</li>
+<li>Figma</li>
 </ul>
 
 ## Desenvolvedores
@@ -66,10 +69,10 @@ Para os demais fins, disponibilizamos o layout criado no figma que irá guiar a 
 Link do Figma
 </a>
 </p>
-<img src="Figma1.png">
+<img src="public/Figma1.png">
 
 ## Projeto em Construção
 
 <p align="center">
-<img src="worktodo.gif">
+<img src="public/worktodo.gif">
 </p>
