@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function SideBar() {
     return (
-        <div className={'flex w-52 min-h-full bg-green-200'}>
+        <div className={'flex w-52 min-h-full bg-blue-950 bg-opacity-50 text-white font-bold'}>
             <ul className="mx-2">
                 <li className="my-2">
                     <Link href="/">
