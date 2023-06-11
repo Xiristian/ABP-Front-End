@@ -1,7 +1,10 @@
+import Schedules from "@/components/SchedulesCard";
+
 export default function Home() {
-    return (
-      <div className="flex min-h-full w-full items-center justify-center flex-col">
-        <h1 className="text-xl text-blue-950 pb-3">Você é um(a) paciente</h1>
-      </div>
-    )
-  }
+  return (
+    <div className="flex min-h-full w-full items-center text-left justify-center flex-col">
+      <h2 className="mb-5 text-3xl font-semibold text-gray-800">Próximos agendamentos</h2>
+      <Schedules />
+    </div>
+  )
+}
