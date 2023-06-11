@@ -7,7 +7,7 @@ Projeto de ABP da matéria de Front End do curso de Engenharia de Software da Un
 
 <!-- Descrição do Projeto -->
 <p align="left">
-  O projeto a seguir realizado na mvisa facilitar o processo de agendamento nas unidades básicas de saúde da cidade. Atualmente, o método para marcar consultas ou procedimentos ocorre com a obtenção de senhas presencialmente por ordem de chegada ou então, por agendamentos via telefone.
+  O projeto a seguir visa facilitar o processo de agendamento nas unidades básicas de saúde da cidade. Atualmente, o método para marcar consultas ou procedimentos ocorre com a obtenção de senhas presencialmente por ordem de chegada ou então, por agendamentos via telefone.
 </p>
 
 <p align="left">
