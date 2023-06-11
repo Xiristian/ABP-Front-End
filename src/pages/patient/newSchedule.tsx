@@ -1,10 +1,14 @@
 import { FormEvent, useState } from "react";
-import { dehydrate, QueryClient, useMutation, useQueryClient } from "react-query";
-
+import { useMutation, useQueryClient } from "react-query";
 import { postSchedule, Schedule } from "../../actions/schedules";
-import Link from "next/link";
+import BackButton from "@/components/BackButton";
+import { useRouter } from "next/router";
 
 export default function newSchedules() {
+    const router = useRouter();
+    const { name } = router.query;
+    const patientName = typeof name === 'string' ? name : '';
+
     const [errorMessage, setErrorMessage] = useState("");
 
     function addSchedule(event: FormEvent) {
@@ -12,14 +16,19 @@ export default function newSchedules() {
 
         const form = event.currentTarget as HTMLFormElement;
         const formData = new FormData(form);
+        let scheduleDate = '';
+        console.log(formData.get("newScheduleDate"));
         if (formData.get("newScheduleHealthCenter") !== "" && formData.get("newScheduleAppointmentType") !== ""
-            && formData.get("newSchedulePeriod") !== "" && formData.get("newScheduleDate") !== "") {
+            && formData.get("newSchedulePeriod") !== "" && formData.get("newScheduleDate") !== ""
+            && formData.get("newScheduleDescription")) {
+            scheduleDate = formData.get("newScheduleDate") as string;
             const newSchedule = {
-                patientName: "Ana",
+                patientName: patientName,
                 healthCenter: formData.get("newScheduleHealthCenter"),
                 appointmentType: formData.get("newScheduleAppointmentType"),
                 period: formData.get("newSchedulePeriod"),
-                date: formData.get("newScheduleDate"),
+                date: `${scheduleDate.substring(8, 10)}/${scheduleDate.substring(5, 7)}/${scheduleDate.substring(0, 4)}`,
+                description: formData.get("newScheduleDescription"),
                 status: "Aguardando aprovação",
                 doctorName: "",
                 hour: "",
@@ -37,7 +46,7 @@ export default function newSchedules() {
     const queryClient = useQueryClient();
 
     const mutationPost = useMutation
-        ((newSchedule: Schedule) =>  postSchedule(newSchedule), {
+        ((newSchedule: Schedule) => postSchedule(newSchedule), {
             onSuccess: () => {
                 queryClient.invalidateQueries("schedules");
             },
@@ -45,7 +54,10 @@ export default function newSchedules() {
 
     return (
         <div className="flex min-h-full w-full flex-col items-center justify-center">
-            <h1 className="font-bold text-blue-950 text-2xl whitespace-nowrap ml-10">NOVO AGENDAMENTO</h1>
+            <div className="flex flex-row">
+                <BackButton customClass="mr-96 -ml-96"></BackButton>
+                <h1 className="font-bold text-blue-950 text-2xl whitespace-nowrap">NOVO AGENDAMENTO</h1>
+            </div>
             <form onSubmit={addSchedule} method="post" className="space-y-4 text-left mt-10 ">
                 <fieldset disabled={mutationPost.isLoading}>
                     <div className="flex space-x-15">
@@ -61,8 +73,8 @@ export default function newSchedules() {
                             <label htmlFor="cidade" className="block font-bold text-blue-950 text-2xl">Cidade:</label>
                             <select id="cidade" name="cidade" className="input w-96 h-10 bg-gray-300 rounded-md">
                                 <option value="">Selecione a cidade</option>
-                                <option value="criciuma">Criciúma</option>
-                                <option value="sombrio">Sombrio</option>
+                                <option value="Criciúma">Criciúma</option>
+                                <option value="Sombrio">Sombrio</option>
                             </select>
                         </div>
                     </div>
@@ -72,7 +84,7 @@ export default function newSchedules() {
                         <select id="newScheduleHealthCenter" name="newScheduleHealthCenter" className="input w-[1085px] h-10 bg-gray-300 rounded-md">
                             <option value="">Selecione o posto</option>
                             <option value="Tal">Posto Centro</option>
-                            <option value="Minadomato">Posto Mina do Mato</option>
+                            <option value="Mina do Mato">Posto Mina do Mato</option>
                             <option value="Pinheirinho">Posto Pinheirinho</option>
                             <option value="Sombrio">Posto Sombrio</option>
                         </select>
@@ -108,15 +120,20 @@ export default function newSchedules() {
                         </div>
 
                         <div className="ml-64">
-                            <label htmlFor="sintomas" className="block font-bold text-blue-950 text-2xl">O que você está sentindo:</label>
-                            <textarea id="sintomas" name="sintomas" className="input w-96 h-32  bg-gray-300 rounded-md"></textarea>
+                            <label htmlFor="newScheduleDescription" className="block font-bold text-blue-950 text-2xl">O que você está sentindo:</label>
+                            <textarea id="newScheduleDescription" name="newScheduleDescription" className="input w-96 h-32  bg-gray-300 rounded-md"></textarea>
                         </div>
                     </div>
+                    {errorMessage && (
+                        <div className="text-center h-0 text-red-600 ml-10">
+                            <h1>{errorMessage}</h1>
+                        </div>
+                    )}
                     <div className="self-center text-center">
                         <button
                             disabled={mutationPost.isLoading}
                             type="submit"
-                            className="btn w-80 h-12 rounded-3xl bg-blue-950 self-center mt-11 text-2xl text-white ml-10">
+                            className="btn w-80 h-12 rounded-3xl bg-blue-950 self-center mt-8 text-2xl text-white ml-10">
                             ENVIAR
                         </button>
                     </div>

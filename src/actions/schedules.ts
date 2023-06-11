@@ -10,6 +10,7 @@ export type Schedule = {
   date: string;
   hour: string;
   status: string;
+  description: string;
 }
 
 export async function getSchedules() {

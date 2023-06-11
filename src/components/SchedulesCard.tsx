@@ -2,14 +2,14 @@ import { dehydrate, QueryClient, useQuery } from "react-query";
 
 import { getSchedules, Schedule } from "../actions/schedules";
 
-export default function Schedules() {
+export default function Schedules({ patientName }: { patientName: string }) {
   var schedules = useQuery({ queryKey: ["schedule"], queryFn: getSchedules });
 
   return (
     <div>
       {!!schedules.isLoading && <p className="text-lg font-bold text-gray-400">Carregando próximos agendamentos...</p>}
       <ul className="mx-5 my-4 flex space-x-4">
-        {schedules.data?.filter((schedule: Schedule) => (schedule.patientName === "Christian"))
+        {schedules.data?.filter((schedule: Schedule) => (schedule.patientName === patientName && schedule.status === "Confirmado"))
           .map((schedule: Schedule) => (
             <li key={schedule.id} className="py-px">
               <div className="border-blue-950 border rounded text-white text-center text-2xl">
@@ -26,8 +26,8 @@ export default function Schedules() {
             </li>
           ))}
       </ul>
-      {!schedules.isLoading && schedules.data?.length === 0 && (
-        <p className="font-semibold text-gray-600">Nenhum agendamento marcado</p>
+      {!schedules.isLoading && schedules.data?.filter((schedule: Schedule) => (schedule.patientName === patientName && schedule.status === "Confirmado")).length === 0 && (
+        <p className="font-semibold text-blue-950 my-4 -mt-8">Nenhum agendamento marcado</p>
       )}
     </div>
   );
