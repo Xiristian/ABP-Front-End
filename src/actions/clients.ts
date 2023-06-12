@@ -14,12 +14,12 @@ export type Client = {
   };
 }
 
-export async function getSchedules() {
+export async function getClients() {
   const response = await fetch(`${API_URI}/client`);
   return await response.json();
 }
 
-export async function postSchedule(newClient: Client) {
+export async function postClient(newClient: Client) {
   const response = await fetch(`${API_URI}/client`, {
     method: "POST",
     headers: {
@@ -30,7 +30,7 @@ export async function postSchedule(newClient: Client) {
   return await response.json();
 }
 
-export async function deleteSchedule(id: string) {
+export async function deleteClient(id: string) {
   const response = await fetch(`${API_URI}/client/?id=${id}`, {
     method: "DELETE",
     headers: {

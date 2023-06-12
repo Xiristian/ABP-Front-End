@@ -15,6 +15,11 @@ export default function Home() {
           <h1>Enfermeiro(a)</h1>
         </button>
       </Link>
+      <Link href="/register">
+        <button className='h-10 w-52 bg-blue-950 hover:bg-blue-800 rounded-md text-white'>
+          <h1>Cadastro</h1>
+        </button>
+      </Link>
       </div>
     </div>
   )
