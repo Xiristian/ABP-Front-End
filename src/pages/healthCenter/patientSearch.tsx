@@ -1,64 +1,34 @@
-import { useState, useEffect } from "react";
+import { Client, getClients } from "@/actions/clients";
+import { useState, FormEvent } from "react";
+import { QueryClient, dehydrate, useQuery } from "react-query";
 
 export default function PatientSearch() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState<
-    { id: number; name: string }[]
-  >([]);
-  const [clients, setClients] = useState<{
-    id: number;
-    name: string;
-    number: string;
-    cpf: string;
-    address: {
-      street: string;
-      city: string;
-      neighborhood: string;
-      state: string;
-      number: number;
-    };
-  }[]>([]);
-  const [selectedClientId, setSelectedClientId] = useState<number | null>(null);
 
-  useEffect(() => {
-    fetchClients();
-  }, []);
+  const clients = useQuery({ queryKey: ["client"], queryFn: getClients });
 
-  const fetchClients = async () => {
-    try {
-      const response = await fetch("/api/client");
-      const data = await response.json();
-      setClients(data);
-    } catch (error) {
-      console.error("Erro ao obter os clientes:", error);
-    }
-  };
-
-  useEffect(() => {
-    patientSearch();
-  }, [searchTerm, clients]);
+  const [selectedClientId, setSelectedClientId] = useState("");
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     patientSearch();
   };
 
   const patientSearch = () => {
-    const filteredClients = clients.filter(
-      (client) =>
-        client.name.toLowerCase().includes(searchTerm.toLowerCase())
+    const filteredClients = clients.data?.filter((client: Client) =>
+      client.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    setSearchResults(filteredClients);
-    setSelectedClientId(null);
+    setSelectedClientId("");
+  
   };
 
-  const toggleClientDetails = (clientId: number) => {
+  const toggleClientDetails = (clientId: string) => {
     setSelectedClientId((prevSelectedClientId) =>
-      prevSelectedClientId === clientId ? null : clientId
+      prevSelectedClientId === clientId ? "" : clientId
     );
   };
 
@@ -84,19 +54,24 @@ export default function PatientSearch() {
       </form>
 
       <div className="mt-8">
-        {searchResults.length === 0 && (
-          clients.length === 0 ? (
-            <p className="text-gray-600 pl-1">Nenhum cliente cadastrado.</p>
-          ) : (
-            <table className="w-full">
-              <thead>
-                <tr>
-                  <th className="py-2 px-4 text-left">ID</th>
-                  <th className="py-2 px-4 text-left">Nome</th>
-                </tr>
-              </thead>
-              <tbody>
-                {clients.map((client) => (
+        {clients.data?.filter((client: Client) =>
+          client.name.toLowerCase().includes(searchTerm.toLowerCase())
+        ).length === 0 ? (
+          <p className="text-gray-600 pl-1">Nenhum resultado encontrado.</p>
+        ) : (
+          <table className="w-full">
+            <thead>
+              <tr>
+                <th className="py-2 px-4 text-left">ID</th>
+                <th className="py-2 px-4 text-left">Nome</th>
+              </tr>
+            </thead>
+            <tbody>
+              {clients.data
+                ?.filter((client: Client) =>
+                  client.name.toLowerCase().includes(searchTerm.toLowerCase())
+                )
+                .map((client: Client) => (
                   <tr
                     key={client.id}
                     onClick={() => toggleClientDetails(client.id)}
@@ -106,43 +81,19 @@ export default function PatientSearch() {
                     <td className="py-2 px-4">{client.name}</td>
                   </tr>
                 ))}
-              </tbody>
-            </table>
-          )
-        )}
-
-        {searchResults.length > 0 && (
-          <table className="w-full">
-            <thead>
-              <tr>
-                <th className="py-2 px-4 text-left">ID</th>
-                <th className="py-2 px-4 text-left">Nome</th>
-              </tr>
-            </thead>
-            <tbody>
-              {searchResults.map((client) => (
-                <tr
-                  key={client.id}
-                  onClick={() => toggleClientDetails(client.id)}
-                  className="cursor-pointer"
-                >
-                  <td className="py-2 px-4">{client.id}</td>
-                  <td className="py-2 px-4">{client.name}</td>
-                </tr>
-              ))}
             </tbody>
           </table>
         )}
       </div>
 
-      {selectedClientId !== null && (
+      {selectedClientId !== "" && (
         <div className="bg-gray-200 p-4 mt-4">
           <h2 className="text-lg font-bold text-gray-800">
             Detalhes do Cliente
           </h2>
-          {clients
-            .filter((client) => client.id === selectedClientId)
-            .map((client) => (
+          {clients.data
+            ?.filter((client: Client) => client.id === selectedClientId)
+            .map((client: Client) => (
               <div key={client.id}>
                 <p>Nome: {client.name}</p>
                 <p>Número: {client.number}</p>
@@ -158,4 +109,19 @@ export default function PatientSearch() {
       )}
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery({
+    queryKey: ["client"],
+    queryFn: getClients,
+  });
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
 }
