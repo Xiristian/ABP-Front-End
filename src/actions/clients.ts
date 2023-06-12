@@ -5,7 +5,7 @@ export type Client = {
   name: string;
   number: string;
   cpf: string;
-  adress: {
+  address: {
     street: string;
     city: string;
     neighborhood: string;

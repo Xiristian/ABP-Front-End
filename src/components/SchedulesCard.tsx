@@ -3,7 +3,7 @@ import { dehydrate, QueryClient, useQuery } from "react-query";
 import { getSchedules, Schedule } from "../actions/schedules";
 
 export default function Schedules({ patientName }: { patientName: string }) {
-  var schedules = useQuery({ queryKey: ["schedule"], queryFn: getSchedules });
+  const schedules = useQuery({ queryKey: ["schedule"], queryFn: getSchedules });
 
   return (
     <div>
