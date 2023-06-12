@@ -5,6 +5,7 @@ import { useState } from 'react';
 import SideBar from '../components/SideBar';
 import { FaBars, FaUserCircle, FaBell } from 'react-icons/fa';
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
+import logo from '../../public/logo.png'
 
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(
@@ -33,7 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
               <FaBars color='white' />
             </button>
             <div className='flex pl-5 pb-3 pt-3'>
-              <Image src="/logo.png" alt='logo' height={0} width={100}></Image>
+              <Image src={logo} alt='logo' height={0} width={180}></Image>
             </div>
             <div className='flex pb-3 pt-3 place-items-center gap-4 ml-auto mr-5'>
               <FaBell size={30} color='white'></FaBell>
