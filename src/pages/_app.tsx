@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import Image from 'next/image';
 import { useState } from 'react';
 import SideBar from '../components/SideBar';
+import Modal from '../components/Notification';
 import { FaBars, FaUserCircle, FaBell } from 'react-icons/fa';
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 import logo from '../../public/logo.png'
@@ -25,6 +26,12 @@ export default function App({ Component, pageProps }: AppProps) {
     setSidebar(!sideBarOpen);
   };
 
+    const [showModal, setShowModal] = useState(false);
+  
+    const openModal = () => {
+      setShowModal(!showModal);
+    };
+
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
@@ -37,7 +44,9 @@ export default function App({ Component, pageProps }: AppProps) {
               <Image src={logo} alt='logo' height={0} width={180}></Image>
             </div>
             <div className='flex pb-3 pt-3 place-items-center gap-4 ml-auto mr-5'>
+            <button className='mx-5' onClick={openModal}>
               <FaBell size={30} color='white'></FaBell>
+            </button>
               <FaUserCircle size={50} color='white'></FaUserCircle>
               <h1 className='text-xl text-white'>Olá, <br />Xiristian</h1>
             </div>
@@ -45,8 +54,8 @@ export default function App({ Component, pageProps }: AppProps) {
           <div className='flex flex-1 bg-white'>
             {sideBarOpen && <SideBar />}
             <Component {...pageProps} />
-          </div>
-          <div className='w-full h-20 bottom-0 bg-blue-950'>
+            <p className='flex flex-1 bg-white'/>
+            {showModal && <Modal />}
           </div>
         </main>
       </Hydrate>
