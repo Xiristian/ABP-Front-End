@@ -5,9 +5,10 @@ import { useState } from 'react';
 import SideBar from '../components/SideBar';
 import Modal from '../components/Notification';
 import Profile from '@/components/Profile';
-import { FaBars, FaUserCircle, FaBell } from 'react-icons/fa';
+import { FaBars, FaBell } from 'react-icons/fa';
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 import logo from '../../public/logo.png'
+import { UserPanel } from '@/components/UserPanel';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(
@@ -28,13 +29,13 @@ export default function App({ Component, pageProps }: AppProps) {
   };
 
   const [showModal, setShowModal] = useState(false);
-  
+
   const openModal = () => {
     setShowModal(!showModal);
   };
 
   const [showProfile, setShowProfile] = useState(false);
-  
+
   const openProfile = () => {
     setShowProfile(!showProfile);
   };
@@ -51,13 +52,10 @@ export default function App({ Component, pageProps }: AppProps) {
               <Image src={logo} alt='logo' height={0} width={180}></Image>
             </div>
             <div className='flex pb-3 pt-3 place-items-center gap-4 ml-auto mr-5'>
-            <button className='mx-5' onClick={openModal}>
-              <FaBell size={30} color='white'></FaBell>
-            </button>
-            <button className='flex items-center' onClick={openProfile}>
-              <FaUserCircle size={50} color='white'></FaUserCircle>
-              <h1 className='ml-2 text-xl text-white text-left'>Olá,<br/>Xiristian</h1>
-            </button>
+              <button className='mx-5' onClick={openModal}>
+                <FaBell size={30} color='white'></FaBell>
+              </button>
+              <UserPanel handleClickEvent={openProfile} />
             </div>
           </div>
           <div className='flex flex-1 bg-white'>

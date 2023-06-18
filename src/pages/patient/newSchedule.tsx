@@ -1,12 +1,12 @@
 import { FormEvent, useState } from "react";
-import { useMutation, useQueryClient } from "react-query";
+import { QueryClient, dehydrate, useMutation, useQuery, useQueryClient } from "react-query";
 import { postSchedule, Schedule } from "../../actions/schedules";
 import BackButton from "@/components/BackButton";
-import { useRouter } from "next/router";
+import { getUserLogged } from "@/actions/userLogged";
 
 export default function newSchedules() {
-  const router = useRouter();
-  const { name } = router.query;
+  const userLogged = useQuery({ queryKey: ["userLogged"], queryFn: getUserLogged });
+  const name = userLogged.data?.[0]?.name;
   const patientName = typeof name === "string" ? name : "";
 
   const [errorMessage, setErrorMessage] = useState("");
@@ -36,7 +36,7 @@ export default function newSchedules() {
           7
         )}/${scheduleDate.substring(0, 4)}`,
         description: formData.get("newScheduleDescription"),
-        status: "Aguardando aprovação",
+        status: "Agurdando aprovação",
         doctorName: "",
         hour: "",
       } as Schedule;
@@ -221,4 +221,19 @@ export default function newSchedules() {
       </form>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery({
+    queryKey: ["userLogged"],
+    queryFn: getUserLogged,
+  });
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
 }

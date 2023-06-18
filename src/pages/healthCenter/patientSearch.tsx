@@ -1,4 +1,5 @@
 import { Client, getClients } from "@/actions/clients";
+import BackButton from "@/components/BackButton";
 import { useState, FormEvent } from "react";
 import { QueryClient, dehydrate, useQuery } from "react-query";
 
@@ -34,6 +35,7 @@ export default function PatientSearch() {
 
   return (
     <div className="container mx-auto py-8">
+      <BackButton customClass=""></BackButton>
       <h1 className="text-2xl font-bold text-blue-950 mb-4 pl-1">
         Buscar Pacientes
       </h1>
