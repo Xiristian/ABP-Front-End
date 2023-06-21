@@ -36,7 +36,7 @@ export default function newSchedules() {
           7
         )}/${scheduleDate.substring(0, 4)}`,
         description: formData.get("newScheduleDescription"),
-        status: "Agurdando aprovação",
+        status: "Aguardando aprovação",
         doctorName: "",
         hour: "",
       } as Schedule;
