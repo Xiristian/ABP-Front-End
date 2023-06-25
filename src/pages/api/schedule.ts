@@ -3,8 +3,8 @@ import { generateId } from "../../../env";
 
 const DB = {
   schedules: [
-    { id: generateId(), patientName: "Christian", healthCenter: "Pinheirinho", appointmentType: "Denstista", period: "Manhã", date: "11/07/2023", hour: "09:10", doctorName: "", status: "Confirmado" },
-    { id: generateId(), patientName: "Christian", healthCenter: "Pinheirinho", appointmentType: "Rotina", period: "Tarde", date: "11/07/2023", hour: "", doctorName: "", status: "Confirmado" },
+    { id: generateId(), patientName: "Christian", healthCenter: "Pinheirinho", appointmentType: "Denstista", period: "Manhã", date: "11/07/2023", hour: "09:10", doctorName: "Dra. Ana", status: "Confirmado", description: "Ai que dorrrrr" },
+    { id: generateId(), patientName: "Christian", healthCenter: "Pinheirinho", appointmentType: "Rotina", period: "Tarde", date: "11/07/2023", hour: "", doctorName: "", status: "Aguardando aprovação", description: "Eu to morrendo socorro" },
     { id: generateId(), patientName: "Luz", healthCenter: "Tal", appointmentType: "Pediatra", period: "Tarde", date: "10/07/2023", hour: "", doctorName: "", status: "Confirmado" }
   ],
 };
