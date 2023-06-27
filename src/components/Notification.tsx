@@ -8,7 +8,7 @@ export default function Modal() {
             <h1 className='bg-blue-950 p-1 border-blue-950 text-white text-center'>Notificações</h1>
                 <li className='mx-5 my-4 text-white text-start'>
                     <Link href="/">
-                    <h1>Conteúdo x</h1>
+                    <h1></h1>
                     </Link>
                 </li>
             </ul>
