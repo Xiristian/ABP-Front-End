@@ -18,9 +18,14 @@ export default function Home() {
             <h1>Buscar pacientes</h1>
           </button>
         </Link>
-        <Link href="/healthCenter/Requests">
+        <Link href="/healthCenter/requests">
           <button className="h-10 w-56 mt-8 ml-8 bg-blue-950 hover:bg-blue-800 rounded-md text-white whitespace-nowrap">
             <h1>Solicitações de Agendamento</h1>
+          </button>
+        </Link>
+        <Link href="/healthCenter/healthCenterRequest">
+          <button className="h-10 w-56 mt-8 ml-8 bg-blue-950 hover:bg-blue-800 rounded-md text-white whitespace-nowrap">
+            <h1>Agendar consulta</h1>
           </button>
         </Link>
       </div>

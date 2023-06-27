@@ -57,6 +57,7 @@ export default function newSchedules() {
     {
       onSuccess: () => {
         queryClient.invalidateQueries("schedules");
+        alert("Agendamento Confirmado")
       },
     }
   );

@@ -20,8 +20,9 @@ export default function RequestsList() {
   const mutationPost = useMutation(
     (newSchedule: Schedule) => postSchedule(newSchedule),
     {
-      onSuccess: () => {
+      onSuccess: (schedule:Schedule) => {
         queryClient.invalidateQueries("schedules");
+        alert(`Agendamento ${schedule.status}`)
       },
     }
   );
